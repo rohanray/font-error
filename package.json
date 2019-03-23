@@ -1,0 +1,20 @@
+{
+  "name": "type-error",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^8.0.3",
+    "next-fonts": "^0.17.0",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "styled-components": "^4.1.3"
+  }
+}
