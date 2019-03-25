@@ -1,6 +1,16 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-import { ServerStyleSheet } from "styled-components";
+import { ServerStyleSheet, createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Pangram';
+    src: url('/static/fonts/Pangram-Regular.ttf');
+    src: url('/static/fonts/Pangram-Bold.ttf');
+    src: url('/static/fonts/Pangram-Black.ttf');
+    src: url('/static/fonts/Pangram-ExtraLight.ttf');
+  }
+`;
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -38,25 +48,11 @@ export default class MyDocument extends Document {
             content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0"
           />
         </Head>
-        <body className="custom_class">
+        <body>
+          <GlobalStyle />
           <Main />
           <NextScript />
         </body>
-        <style jsx global>{`
-          html {
-            font-size: 16px;
-          }
-          body {
-            font-family: Pangram;
-            margin: 0;
-            background-color: white;
-          }
-          @media only screen and (min-width: 64.063em) {
-            html {
-              font-size: 18px;
-            }
-          }
-        `}</style>
       </Html>
     );
   }
