@@ -1,16 +1,6 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document from "next/document";
 
-import { ServerStyleSheet, createGlobalStyle } from 'styled-components';
-
-const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'Pangram';
-    src: url('/static/fonts/Pangram-Regular.ttf');
-    src: url('/static/fonts/Pangram-Bold.ttf');
-    src: url('/static/fonts/Pangram-Black.ttf');
-    src: url('/static/fonts/Pangram-ExtraLight.ttf');
-  }
-`;
+import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -36,24 +26,5 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
-  }
-
-  render() {
-    return (
-      <Html>
-        <Head>
-          <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0"
-          />
-        </Head>
-        <body>
-          <GlobalStyle />
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
   }
 }
